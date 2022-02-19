@@ -11,6 +11,17 @@ public class OriginalScore {
      * @throws Exception Los valores ingresados no pueden ser negativos
     */
     public int calculateScore(int correctCount, int incorrectCount){
-        return 0;
+        int puntaje;
+        if (correctCount<0 || incorrectCount<0){
+            puntaje=-1;
+        }
+        else{
+            puntaje=100-incorrectCount*10;
+            if (puntaje<0){
+                puntaje=0;
+            }
+
+        }
+        return puntaje;
     }
 }

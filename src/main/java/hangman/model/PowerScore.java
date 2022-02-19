@@ -14,7 +14,19 @@ public class PowerScore {
      * @throws Exception Los valores ingresados no pueden ser negativos
      */
     public int calculateScore(int correctCount, int incorrectCount){
-
-        return 0;
+        int puntaje=0;
+        if (correctCount<0 || incorrectCount<0){
+            puntaje=-1;
+        }
+        else{
+            puntaje=(5^correctCount)-incorrectCount*8;
+            if (puntaje<0){
+                puntaje=0;
+            }
+            else if(puntaje>500){
+                puntaje=500;
+            }
+        }
+        return puntaje;
     }
 }

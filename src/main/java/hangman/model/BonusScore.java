@@ -13,6 +13,17 @@ public class BonusScore {
      * @throws Exception Los valores ingresados no pueden ser negativos
      */
     public int calculateScore(int correctCount, int incorrectCount){
-        return 0;
+        int puntaje=0;
+        if (correctCount<0 || incorrectCount<0){
+            puntaje=-1;
+        }
+        else{
+            puntaje=correctCount*10-incorrectCount*5;
+            if (puntaje<0){
+                puntaje=0;
+            }
+
+        }
+        return puntaje;
     }
 }
